@@ -116,8 +116,8 @@ async function loadWeatherData() {
     const payload = await res.json();
     AppState.weatherData = payload.locations || [];
 
-    // Format updated timestamp
-    updateHeaderTimestamp(payload.updated_at);
+    // Format updated timestamp & source badge
+    updateHeaderTimestamp(payload.updated_at, payload.source);
 
     // Compute stats
     computeMetrics(AppState.weatherData);
@@ -191,9 +191,23 @@ function computeMetrics(locations) {
   document.getElementById("countCool").textContent = coolCount;
 }
 
-// Format timestamp
-function updateHeaderTimestamp(isoString) {
+// Format timestamp & source badge
+function updateHeaderTimestamp(isoString, source) {
   const el = document.getElementById("lastUpdatedTime");
+  const badgeEl = document.getElementById("dataSourceBadge");
+
+  if (badgeEl) {
+    if (source === "CWA OpenData Live API") {
+      badgeEl.textContent = "CWA 即時 API";
+      badgeEl.className = "source-badge source-live";
+      badgeEl.title = "已成功連線至交通部中央氣象署 OpenData API";
+    } else {
+      badgeEl.textContent = "離線備援資料";
+      badgeEl.className = "source-badge source-fallback";
+      badgeEl.title = "目前使用離線備援資料";
+    }
+  }
+
   if (!isoString) {
     el.textContent = "即時連線中";
     return;

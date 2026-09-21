@@ -182,6 +182,26 @@ body {
   color: #34d399;
 }
 
+.source-badge {
+  font-size: 0.68rem;
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.source-live {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.source-fallback {
+  background: rgba(234, 179, 8, 0.2);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
 .pulse-dot {
   width: 8px;
   height: 8px;
