@@ -1,0 +1,6 @@
+# Ignore Python dependency manifests so Vercel treats this as a pure static site
+requirements.txt
+scripts/
+.github/
+.env*
+*.md
