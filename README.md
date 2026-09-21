@@ -6,6 +6,14 @@
 [![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel%20Edge%20CDN-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 [![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2563eb?style=for-the-badge&logo=githubactions)](https://github.com/features/actions)
 
+---
+
+### 🌐 快速傳送門 (Quick Links)
+- 🔗 **GitHub Repository**：[https://github.com/Dave1588/Taiwan-weather-GIS-web-application](https://github.com/Dave1588/Taiwan-weather-GIS-web-application#readme) （點擊前往此 Repo 的 README）
+- 🚀 **Live Demo 線上網站**：[https://taiwan-weather-gis-web-application.vercel.app](https://taiwan-weather-gis-web-application.vercel.app) （點擊進入網站即時查看台灣天氣）
+
+---
+
 > 專為現代瀏覽器打造的**台灣氣象 GIS 互動地圖儀表板**。本專案透過定時排程向交通部中央氣象署（CWA）擷取全台 22 縣市（含外島）的即時氣象預報，利用 Serverless 靜態邊緣快取架構，搭配極致現代深色毛玻璃（Glassmorphism）與向量地圖雙向聯動體驗。
 
 ---
@@ -192,7 +200,7 @@ GitHub Actions 執行時，工作流日誌中會清楚印出：
 2. 前往 **Settings** > **Secrets and variables** > **Actions**。
 3. 點擊 **New repository secret**：
    - **Name**: `CWA_API_KEY`
-   - **Secret**: 貼上您的氣象署 API 金鑰（例如：`CWA-55FDA6D3-A43C-4AE0-BB30-E62D5F684FB2`）。
+   - **Secret**: 貼上您的氣象署 API 金鑰（例如：`CWA-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`）。
 4. 儲存後，前往 **Actions** 標籤頁即可手動測試 `Update Weather Data` 工作流。
 
 ---
