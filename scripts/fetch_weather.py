@@ -213,7 +213,8 @@ def main():
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    print(f"[OK] Weather payload successfully written to {output_file}")
+    rel_output = "public/data/weather.json"
+    print(f"[OK] Weather payload successfully written to {rel_output}")
     print(f"     - Updated at: {payload['updated_at']}")
     print(f"     - Total locations: {len(locations)}")
 

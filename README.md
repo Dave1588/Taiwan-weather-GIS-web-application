@@ -10,7 +10,7 @@
 
 ### 🌐 快速傳送門 (Quick Links)
 - 🔗 **GitHub Repository**：[https://github.com/Dave1588/Taiwan-weather-GIS-web-application](https://github.com/Dave1588/Taiwan-weather-GIS-web-application#readme) （點擊前往此 Repo 的 README）
-- 🚀 **Live Demo 線上網站**：[https://taiwan-weather-gis-web-application.vercel.app](https://taiwan-weather-gis-web-application.vercel.app) （點擊進入網站即時查看台灣天氣）
+- 🚀 **Live Demo 線上網站**：[https://taiwan-weather-gis-web-application-swart.vercel.app/](https://taiwan-weather-gis-web-application-swart.vercel.app/) （點擊進入網站即時查看台灣天氣）
 
 ---
 
@@ -154,7 +154,7 @@ python -m http.server 8080 --directory public
 - 🟡 **黃色 `[ 離線備援資料 ]`**：代表目前運作於備援模式。
 
 ### 方法 2：檢查 `weather.json` 中的來源欄位
-檢視 [public/data/weather.json](file:///c:/Users/amath701/Desktop/Taiwan-weather-GIS-web-application/public/data/weather.json) 標頭：
+檢視 `public/data/weather.json` 標頭：
 ```json
 {
   "updated_at": "2026-09-21T12:11:12.973617+00:00",
@@ -211,7 +211,7 @@ GitHub Actions 執行時，工作流日誌中會清楚印出：
 
 1. 登入 [Vercel](https://vercel.com/)。
 2. 點擊 **Add New Project**，匯入 `Taiwan-weather-GIS-web-application` 儲存庫。
-3. Vercel 會自動讀取專案內的 [vercel.json](file:///c:/Users/amath701/Desktop/Taiwan-weather-GIS-web-application/vercel.json)：
+3. Vercel 會自動讀取專案內的 `vercel.json`：
    - `outputDirectory`: `"public"`
    - `cleanUrls`: `true`
 4. 點選 **Deploy**，約 15 秒內即可完成全球 CDN 發布！
