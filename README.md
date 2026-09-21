@@ -12,6 +12,10 @@
 - 🔗 **GitHub Repository**：[https://github.com/Dave1588/Taiwan-weather-GIS-web-application](https://github.com/Dave1588/Taiwan-weather-GIS-web-application#readme) （點擊前往此 Repo 的 README）
 - 🚀 **Live Demo 線上網站**：[https://taiwan-weather-gis-web-application-swart.vercel.app/](https://taiwan-weather-gis-web-application-swart.vercel.app/) （點擊進入網站即時查看台灣天氣）
 
+<p align="center">
+  <img src="./系統預覽圖片.png" alt="台灣氣象 GIS 儀表板系統預覽" width="100%">
+</p>
+
 ---
 
 > 專為現代瀏覽器打造的**台灣氣象 GIS 互動地圖儀表板**。本專案透過定時排程向交通部中央氣象署（CWA）擷取全台 22 縣市（含外島）的即時氣象預報，利用 Serverless 靜態邊緣快取架構，搭配極致現代深色毛玻璃（Glassmorphism）與向量地圖雙向聯動體驗。
@@ -35,15 +39,41 @@
 
 本專案採用**「無伺服器靜態前端 + CI/CD 邊緣排程 ETL」**的高效能架構：
 
-```mermaid
-flowchart TD
-    A[中央氣象署 CWA OpenData API<br>F-C0032-001] -->|每 3 小時排程請求| B(GitHub Actions Runner)
-    B -->|執行 ETL 腳本| C[scripts/fetch_weather.py]
-    C -->|正規化坐標與氣象數據| D[public/data/weather.json]
-    D -->|Git Auto-Commit & Push| E[GitHub Repository : main]
-    E -->|自動觸發靜態部署| F[Vercel Serverless Edge CDN]
-    F -->|提供靜態快取資源| G[使用者瀏覽器]
-    G -->|載入 Leaflet GIS & 雙向聯動 UI| H[台灣氣象 GIS 儀表板]
+```text
+┌──────────────────────────────────────────────┐
+│        中央氣象署 CWA OpenData API           │
+│        (F-C0032-001 36小時氣象預報)          │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼  [每 3 小時自動排程請求]
+┌──────────────────────────────────────────────┐
+│            GitHub Actions Runner             │
+│        (執行 scripts/fetch_weather.py)       │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼  [正規化坐標與氣象數值]
+┌──────────────────────────────────────────────┐
+│           public/data/weather.json           │
+│            (靜態 JSON 快取資料)              │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼  [自動 Git Commit & Push]
+┌──────────────────────────────────────────────┐
+│           GitHub Repository : main           │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼  [自動觸發邊緣部署]
+┌──────────────────────────────────────────────┐
+│          Vercel Serverless Edge CDN          │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼  [CDN 全球高速快取提供]
+┌──────────────────────────────────────────────┐
+│                  使用者瀏覽器                │
+│  • Leaflet.js 互動式向量地圖                 │
+│  • 現代毛玻璃深色科技感 UI                   │
+│  • 22 縣市動態氣溫脈衝光圈與雙向聯動         │
+└──────────────────────────────────────────────┘
 ```
 
 ### 架構優勢
