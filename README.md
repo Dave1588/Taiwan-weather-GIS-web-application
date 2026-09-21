@@ -13,7 +13,7 @@
 - 🚀 **Live Demo 線上網站**：[https://taiwan-weather-gis-web-application-swart.vercel.app/](https://taiwan-weather-gis-web-application-swart.vercel.app/) （點擊進入網站即時查看台灣天氣）
 
 <p align="center">
-  <img src="./系統預覽圖片.png" alt="台灣氣象 GIS 儀表板系統預覽" width="100%">
+  <img src="./preview.png" alt="台灣氣象 GIS 儀表板系統預覽" width="100%">
 </p>
 
 ---
